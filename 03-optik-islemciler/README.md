@@ -1,15 +1,30 @@
-# 03 - Optik İşlemciler ve Yapay Zeka
+# Bölüm 03: Optik İşlemciler ve Işık Hızında Hesaplama
 
-Bu bölüm, geleneksel elektronik işlemcilerin darboğazlarını aşmak için ışığın hızını ve paralelliğini kullanan optik hesaplama sistemlerini kapsar.
+Geleneksel von Neumann mimarisinin "hafıza duvarı" ve enerji tüketimi sorunlarına çözüm olarak geliştirilen optik hesaplama mimarileri, yapay zeka algoritmalarını ışık hızında ve ultra düşük enerjiyle koşturmayı hedefler.
 
-## İçerik
+## 📂 Klasör İçeriği
 
-1.  **Optik Sinir Ağları (ONN)**: Mach-Zehnder İnterferometre (MZI) matrisleri ile matris-vektör çarpımı.
-2.  **Kırınım Tabanlı İşlemciler (DONN)**: Faz plakaları ve serbest uzay kırınımı ile derin öğrenme modelleri.
-3.  **Optik Aktivasyon Fonksiyonları**: Doğrusal olmayan optik etkiler ve hibrit sistemler.
+### 1. Optik Sinir Ağları (Optical Neural Networks - ONN) (`/optik-sinir-aglari`)
+Matris-vektör çarpımı operasyonlarının Mach-Zehnder İnterferometre matrisleri kullanılarak optik olarak gerçekleştirilmesi.
+* **Koherant Optik Hesaplama:** Faz ve genlik manipülasyonu.
+* **Programlanabilir Fotonik Devreler:** Ağırlıkların çip üzerinde güncellenmesi.
+* **Eğitim Algoritmaları:** Hibrit kuantum-klasik veya tamamen optik geri yayılım (backpropagation) yaklaşımları.
 
-## Öğrenim Hedefleri
+### 2. Kırınım Tabanlı İşlemciler (Diffractive ONN - DONN) (`/kirinim-islemcileri`)
+Işığın kırınım özelliklerinden yararlanarak pasif faz plakaları aracılığıyla hesaplama yapılması.
+* **Pasif Hesaplama:** Enerji tüketmeden (sadece deteksiyon aşamasında güç harcayarak) çıkarım (inference) yapılması.
+* **Terahertz ve Optik Rejimler:** Farklı dalga boylarında kırınım tabanlı modelleme.
 
-*   Işığın girişim ve kırınım özelliklerini hesaplama için nasıl kullanılacağını anlamak.
-*   Fotonik devreler ile yapay zeka algoritmalarının entegrasyonunu kavramak.
-*   Geleneksel mimarilere karşı optik işlemcilerin enerji verimliliği ve hız avantajlarını analiz etmek.
+---
+
+## 🔬 Temel Kavramlar
+* **Lineer Operasyonlar:** Fourier dönüşümü ve evrişim (convolution) işlemlerinin lensler ve faz plakaları ile yapılması.
+* **Non-Lineerlik:** Optik aktivasyon fonksiyonları ve malzemeler.
+* **Vektör-Matris Çarpımı:** Işık demetlerinin girişim desenleri üzerinden matematiksel işlem yapması.
+
+---
+
+## 💻 Uygulama Alanları
+* **Yapay Zeka Hızlandırıcılar:** Derin öğrenme modellerinin donanım bazlı hızlandırılması.
+* **Görüntü İşleme:** Gerçek zamanlı optik filtreleme ve kenar belirleme.
+* **Sinyal İşleme:** Ultra geniş bant genişliğinde veri analizi.
