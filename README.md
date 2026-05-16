@@ -1,145 +1,138 @@
-# Fotonik ve Kuantum Mühendisliği Müfredatı
+# 🌌 Fotonik ve Kuantum Mühendisliği Akademik Müfredatı
 
-Bu depo, ışık tabanlı hesaplama (fotonik) ve kuantum teknolojileri alanında uzmanlaşmak isteyen mühendisler, araştırmacılar ve öğrenciler için hazırlanmış kapsamlı, akademik düzeyde bir eğitim portalıdır. Müfredat; temel fizik prensiplerinden başlayarak, modern fotonik entegre devrelerin (PIC) tasarımına, optik yapay zekaya ve kuantum bilgisayar donanımlarına kadar uzanan geniş bir yelpazeyi kapsar.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Field: Physics & Engineering](https://img.shields.io/badge/Field-Photonics%20%26%20Quantum-blueviolet)](https://github.com/arch-yunus/fotonik-ve-kuantum-muhendisligi)
+[![Status: Academic Grade](https://img.shields.io/badge/Status-Academic%20Grade-success)](https://github.com/arch-yunus/fotonik-ve-kuantum-muhendisligi)
 
-## 🚀 Yol Haritası: Bilgi Akışı
+Bu portal, 21. yüzyılın en kritik teknolojik sıçramalarından biri olan **Işık Tabanlı Hesaplama** ve **Kuantum Teknolojileri** üzerine inşa edilmiş hibrit bir mühendislik müfredatıdır. Geleneksel elektronik mimarilerin (von Neumann darboğazı) sınırlarına ulaştığı günümüzde, fotonlar ve kuantum durumları üzerinde kontrol kurmak, geleceğin süper-hesaplama, güvenli haberleşme ve yapay zeka sistemlerinin anahtarını sunmaktadır.
 
-```text
-  [Temel Bilimler & Matematik]
-               ↓
-  [Elektromanyetik Teori & Kuantum Fiziği]
-               ↓
-       ┌───────┴───────┐
-[Fotonik Entegre Devreler (PIC)]   [Kuantum Bilgi Teorisi]
-               ↓                           ↓
-[Optik İşlemciler & Yapay Zeka]     [Kuantum Programlama]
-               ↓                           ↓
-       └───────┬───────┘
-  [İleri Donanım & Sistemler]
+---
+
+## 🎯 Vizyon ve Eğitim Felsefesi
+
+Bu müfredat, sadece teorik bilgi aktarımını değil, aynı zamanda **"Tasarım Odaklı Mühendislik"** (Design-Oriented Engineering) yaklaşımını benimser. Öğrenciler, Maxwell denklemlerinden başlayarak kendi Fotonik Entegre Devrelerini (PIC) tasarlayacak ve kuantum algoritmalarını gerçek donanımlar üzerinde test edebilecek yetkinliğe ulaşırlar.
+
+*   **Bütünsel Yaklaşım:** Matematiksel temelden donanım prototiplemeye kadar uçtan uca eğitim.
+*   **Açık Kaynak Ekosistemi:** `Meep`, `gdsfactory` ve `Qiskit` gibi endüstri standartlarındaki araçların entegrasyonu.
+*   **Geleceğe Hazırlık:** Moore Yasası sonrası dönem için kuantum-dayanıklı çözümler ve optik yapay zeka sistemleri.
+
+---
+
+## 🚀 Yol Haritası: Bilgi Akışı ve Entegrasyon
+
+```mermaid
+graph TD
+    A[Temel Bilimler & Matematik] --> B[Elektromanyetik Teori & Kuantum Fiziği]
+    B --> C1[Fotonik Entegre Devreler - PIC]
+    B --> C2[Kuantum Bilgi Teorisi]
+    C1 --> D1[Optik İşlemciler & Yapay Zeka]
+    C2 --> D2[Kuantum Programlama & Algoritmalar]
+    D1 --> E[İleri Donanım & Hibrit Sistemler]
+    D2 --> E
+    E --> F[Endüstriyel Uygulamalar & Ar-Ge]
 ```
 
 ---
 
-## 📚 8 Dönemlik Mühendislik Müfredatı
+## 📚 Kapsamlı 8 Dönemlik Mühendislik Müfredatı
 
-### 1. Yıl: Temel Bilimler ve Giriş
+### 🔵 1. Yıl: Bilimsel Temeller ve Sayısal Okuryazarlık
+*   **Dönem 1:**
+    * **Matematik I:** Kalkulus, limit, türev, integral ve seriler.
+    * **Genel Fizik I:** Klasik mekanik ve termodinamik yasaları.
+    * **Lineer Cebir:** Matris cebiri, Hilbert uzayları, kuantum durumlarının vektörel temsili.
+    * **Programlama:** Python ile bilimsel hesaplama (NumPy, SciPy).
+*   **Dönem 2:**
+    * **Matematik II:** Çok değişkenli analiz ve diferansiyel denklemler.
+    * **Genel Fizik II:** Elektromanyetizma ve Maxwell denklemlerine giriş.
+    * **Modern Fizik:** Özel görelilik, fotoelektrik olay, kara cisim ışıması, Compton saçılması.
+    * **Teknoloji Seminerleri:** Fotonik ve kuantum sektöründeki güncel trendler (Venture Capital ve Startup ekosistemi).
 
-* **1. Dönem:**
-    * Matematik I (Kalkulus & Analitik Geometri)
-    * Genel Fizik I (Mekanik ve Termodinamik)
-    * Lineer Cebir (Matris matematiği, vektör uzayları ve kuantum durumlarının temeli)
-    * Algoritma ve Programlamaya Giriş (Python & C++)
+### 🟢 2. Yıl: Dalga Mekaniği ve Yarı-İletken Fiziği
+*   **Dönem 3:**
+    * **Elektromanyetik Teori I:** Elektrostatik, manyetostatik, dielektrik ortamlar ve enerji yoğunluğu.
+    * **Klasik Optik:** Geometrik optik, dalga optiği (girişim, kırınım), polarizasyon kontrolü.
+    * **Sinyaller ve Sistemler:** LTI sistemler, Fourier ve Laplace dönüşümleri, frekans domeninde filtreleme.
+*   **Dönem 4:**
+    * **Elektromanyetik Teori II:** Düzlemsel dalgalar, Fresnel katsayıları, metalik ve dielektrik dalga kılavuzları.
+    * **Yarı İletken Fiziği:** Kristal yapıları, enerji bantları, Fermi-Dirac istatistiği, p-n eklem dinamiği.
+    * **Kuantum Mekaniğine Giriş:** Schrödinger denklemi, Dirac notasyonu (Bra-Ket), gözlemlenebilirler ve operatör teorisi.
 
-* **2. Dönem:**
-    * Matematik II (Diferansiyel Denklemler & Sınır Değer Problemleri)
-    * Genel Fizik II (Elektrik ve Manyetizma)
-    * Modern Fiziğe Giriş (Dalga-parçacık ikiliği, fotoelektrik olay, atom modelleri)
-    * Fotonik ve Kuantum Teknolojilerine Giriş (Seminer ve Sektör Analizi)
+### 🟡 3. Yıl: Entegre Sistemler ve Optik Hesaplama
+*   **Dönem 5:**
+    * **Silikon Fotoniği:** Pasif bileşenler (MZI, Halka rezonatörler, yönsüz bağlaştırıcılar), mod analizleri (TE/TM).
+    * **Lazer Fiziği:** Işığın madde ile etkileşimi, uyarılmış emisyon, optik kovuklar (cavity physics), lazer diyotlar.
+    * **Kuantum Mekaniği II:** Açısal momentum, spin, pertürbasyon teorisi ve çok parçacıklı sistemler.
+    * **Bilgisayar Organizasyonu:** CPU/GPU mimarileri ve veri iletimi sınırlamaları.
+*   **Dönem 6:**
+    * **Optik İşlemciler (ONN):** Matris-vektör çarpımı yapan optik ağlar, diffraktif optik nöral ağlar (DONN).
+    * **PIC Tasarımı ve Layout:** E-beam ve fotolitografi süreçleri, `gdsfactory` ile maske tasarımı.
+    * **Kuantum Bilgi Teorisi:** Entanglement (dolanıklık), Bell eşitsizlikleri, kuantum kapıları ve devre modeli.
 
-### 2. Yıl: Fiziksel Altyapı ve Dalga Mekaniği
-
-* **3. Dönem:**
-    * Elektromanyetik Teori I (Maxwell Denklemleri, statik alanlar, dielektrik ortamlar)
-    * Klasik Optik (Girişim, kırınım, polarizasyon, Fourier optiği)
-    * Olasılık Teorisi ve Rastgele Sinyaller
-    * Sinyaller ve Sistemler (Frekans domeninde analiz, Fourier Dönüşümü)
-
-* **4. Dönem:**
-    * Elektromanyetik Teori II (Düzlemsel dalgalar, dalga kılavuzları, metalik ve dielektrik yüzeylerde yansıma)
-    * Yarı İletken Fiziği ve Elemanları (Enerji bantları, p-n eklemleri, taşıyıcı dinamiği)
-    * Kuantum Mekaniğine Giriş (Schrödinger Denklemi, dalga fonksiyonu, Bra-Ket Notasyonu, harmonik osilatör)
-
-### 3. Yıl: Fotonik Devreler ve Optik Hesaplama
-
-* **5. Dönem:**
-    * **Fotonik Devrelerin Temelleri:** Silikon fotoniği, pasif bileşenler (halka rezonatörler, yönsüz bağlaştırıcılar, MZI).
-    * **Lazer Fiziği ve Optoelektronik:** Spontan ve uyarılmış emisyon, LED'ler, lazer diyotlar, fotodedektörler.
-    * **Kuantum Mekaniği II:** Açısal momentum, spin, pertürbasyon teorisi, hidrojen atomu çözümü.
-    * Bilgisayar Mimarisi ve Organizasyonu (Geleneksel von Neumann mimarisi ve darboğazları)
-
-* **6. Dönem:**
-    * **Optik İşlemciler ve Hesaplama:** Optik sinir ağları (ONN), matris-vektör çarpımı yapan optik donanımlar, kırınım tabanlı hesaplama (DONN).
-    * **Fotonik Entegre Devre (PIC) Tasarımı:** Fotolitografi, temiz oda süreçleri, E-beam litografi, heterojen entegrasyon.
-    * **Kuantum Bilgi Teorisine Giriş:** Kübit konsepti, Bloch Küresi, kuantum kapıları (X, Y, Z, H, CNOT), kuantum dolanıklık (Entanglement).
-
-### 4. Yıl: Kuantum Sistemleri ve Uygulamalı Donanım
-
-* **7. Dönem:**
-    * **Kuantum Donanım Teknolojileri:** Süperiletken kübitler, iyon tuzakları ve Doğrusal Optik Kuantum Hesaplama (LOQC).
-    * **Kuantum Programlama ve Algoritmalar:** Deutsch-Jozsa, Shor ve Grover algoritmaları, kuantum hata düzeltme (QEC).
-    * **PIC Simülasyon ve Layout Laboratuvarı:** Sayısal modelleme yöntemleri (FDTD, EME) ve maske tasarımı.
-    * Bitirme Projesi I (Fotonik/Kuantum Sistem Modelleme)
-
-* **8. Dönem:**
-    * **Kuantum Kriptografi ve Haberleşme:** BB84 protokolü, Kuantum Anahtar Dağıtımı (QKD), kuantum internet ve teleportasyon.
-    * **Nano-fotonik ve Metamalzemeler:** Plazmonik yapılar, fotonik kristaller, negatif kırılma indeksli malzemeler.
-    * Entegre Optik Laboratuvarı (PIC karakterizasyonu, fiber-to-chip bağlaşım testleri)
-    * Bitirme Projesi II (Prototip/Gelişmiş Donanım Simülasyonu)
+### 🔴 4. Yıl: Kuantum Üstünlüğü ve İleri Uygulamalar
+*   **Dönem 7:**
+    * **Kuantum Donanımı:** Süperiletken kübitler, iyon tuzakları, nötr atomlar ve fotonik kuantum işlemciler.
+    * **Kuantum Algoritmaları:** Grover, Shor, VQE ve QAOA algoritmaları; gürültülü (NISQ) cihazlarda programlama.
+    * **Sayısal Modelleme Lab:** FDTD ve EME yöntemleri ile fotonik bileşen simülasyonları.
+    * **Bitirme Projesi I:** Özgün bir fotonik/kuantum mimarisinin teorik tasarımı ve simülasyonu.
+*   **Dönem 8:**
+    * **Kuantum Kriptografi:** BB84, E91 protokolleri, QKD (Kuantum Anahtar Dağıtımı), kuantum internet vizyonu.
+    * **Nanofotonik ve Metamalzemeler:** Plazmonikler, fotonik kristaller, negatif kırılma indeksi, süper-lensler.
+    * **PIC Karakterizasyon Lab:** Fiber-to-chip bağlaşımı, spektral analiz ve deneysel veri toplama süreçleri.
+    * **Bitirme Projesi II:** Tasarlanan sistemin performans analizi ve akademik raporlama/yayın süreci.
 
 ---
 
-## 📂 Depo Klasör Yapısı
+## 🏗️ Endüstriyel Uygulama Alanları
 
-Depo, teorik ders notlarının yanı sıra endüstri standartlarında kullanılan simülasyon ve tasarım araçlarına ait kodları içerecek şekilde organize edilmiştir:
+Fotonik ve Kuantum Mühendisliği mezunları aşağıdaki alanlarda devrim yaratacak projelerde yer alırlar:
 
-```text
-fotonik-ve-kuantum-muhendisligi/
-│
-├── 📜 README.md                     # Proje ana dokümantasyonu
-├── ⚖️ LICENSE                       # Açık kaynak lisans dosyası
-│
-├── 📁 01-temel-bilimler/            # Matematik, Fizik ve Elektromanyetik temelleri
-│   ├── 🔬 elektromanyetik-teori/    # Maxwell denklemleri ve dalga kılavuzu analizi
-│   ├── ⚛️ kuantum-fizigi/           # Schrödinger çözücü ve dalga mekaniği kodları
-│   └── 🕯️ fourier-optigi/           # Fourier optiği ve kırınım simülasyonları
-│
-├── 📁 02-fotonik-devreler/          # Silikon Fotoniği ve Entegre Sistemler (PIC)
-│   ├── ⚙️ pasif-bilesenler/         # MZI, Halka Rezonatör ve Yönlü Bağlaştırıcılar
-│   ├── ⚡ aktif-bilesenler/         # Modülatörler ve Fotodedektörler
-│   └── 📐 pic-tasarim-layout/       # gdsfactory ile GDSII maske üretimi
-│
-├── 📁 03-optik-islemciler/          # Donanım Tabanlı Işık Hesaplama ve Yapay Zeka
-│   ├── 🧠 optik-sinir-aglari/       # Optik matris hesaplama ve ONN modelleri
-│   └── 💎 kirinim-islemcileri/      # Diffractive Optical Neural Networks (DONN)
-│
-├── 📁 04-kuantum-teknolojileri/     # Kuantum Donanım, Yazılım ve Algoritmalar
-│   ├── 🚪 kuantum-kapilari/         # Kuantum kapı matris simülasyonları
-│   ├── 💻 kuantum-algoritmalari/    # Qiskit ve Cirq uygulamaları
-│   ├── 🌀 fotonik-kuantum/          # Strawberry Fields (CV-Quantum)
-│   └── 📡 kuantum-haberlesme/       # QKD ve Kuantum İnternet protokolleri
-│
-└── 📁 05-proje-tasarimlari/         # Örnek Bitirme ve Araştırma Projeleri
-    ├── 📝 proje-senaryolari/        # Uygulamalı proje fikirleri
-    └── 📊 rapor-sablonlari/         # Akademik rapor şablonları
-```
+1.  **Veri Merkezleri (Datacenters):** Optik ara bağlantılar (interconnects) ile enerji tasarruflu ve yüksek hızlı veri iletimi.
+2.  **Yapay Zeka Donanımları:** Optik sinir ağları ile binlerce kat daha hızlı çıkarım (inference) yeteneği.
+3.  **Savunma ve Güvenlik:** Kuantum kriptografi ile kırılması imkansız iletişim kanalları ve hassas optik sensörler (LiDAR).
+4.  **Biyomedikal:** Işık tabanlı tanı kitleri, fotonik biyosensörler ve ileri görüntüleme teknikleri.
+5.  **Finans:** Kuantum algoritmaları ile karmaşık portföy optimizasyonu ve risk analizleri.
 
 ---
 
-## 🛠️ Kullanılan Simülasyon ve Yazılım Ekosistemi
+## 🛠️ Yazılım ve Simülasyon Ekosistemi
 
-Bu müfredattaki pratik uygulamaları gerçekleştirmek için aşağıdaki araçlar temel alınmaktadır:
+Bu müfredat, öğrencilerin teoriyi pratiğe dökmesi için aşağıdaki araçları aktif olarak kullanır:
 
-* **Elektromanyetik & Optik Simülasyon:**
-    * [Meep](https://meep.readthedocs.io/) - FDTD (Finite-Difference Time-Domain) simülasyonları.
-    * [PyEIT / EMpy](https://github.com/chriskeraly/EMpy) - Optik mod çözücüler.
-
-* **Fotonik Maske (Layout) Tasarımı:**
-    * [gdsfactory](https://gdsfactory.github.io/gdsfactory/) - Python tabanlı PIC tasarım otomasyonu.
-
-* **Kuantum Hesaplama:**
-    * [Qiskit](https://qiskit.org/) - Kapı tabanlı kuantum programlama (IBM).
-    * [PennyLane](https://pennylane.ai/) - Kuantum makine öğrenmesi.
-    * [Strawberry Fields](https://strawberryfields.ai/) - Fotonik kuantum hesaplama.
+| Alan | Araç | Açıklama |
+| :--- | :--- | :--- |
+| **EM Simülasyon** | [Meep](https://meep.readthedocs.io/) | FDTD yöntemi ile dalga yayılım analizi. |
+| **Mod Analizi** | [EMpy](https://github.com/chriskeraly/EMpy) | Dalga kılavuzu modlarını ve kayıplarını hesaplama. |
+| **PIC Layout** | [gdsfactory](https://gdsfactory.github.io/gdsfactory/) | Python tabanlı GDSII üretim otomasyonu. |
+| **Kuantum Programlama** | [Qiskit](https://qiskit.org/) | IBM Quantum sistemleri için devre tasarımı. |
+| **Kuantum ML** | [PennyLane](https://pennylane.ai/) | Diferansiyellenebilir kuantum hesaplama. |
+| **Fotonik Kuantum** | [Strawberry Fields](https://strawberryfields.ai/) | Fotonik tabanlı kuantum bilgisayar simülatörü. |
 
 ---
 
-## 🤝 Katkıda Bulunma
+## 🌍 Kariyer Yolları ve Gelecek Projeksiyonu
 
-1. Müfredatta eksik olduğunu düşündüğünüz konular için **Issue** açabilirsiniz.
-2. Ders notları veya simülasyon kodları eklemek için **Fork** edip **Pull Request** gönderebilirsiniz.
+Bu alanda uzmanlaşan mühendisler; **Google Quantum AI**, **Intel Photonics**, **Xanadu**, **IBM Research** ve **ASML** gibi dünya devlerinde veya derin teknoloji (Deep-Tech) startup'larında şu pozisyonlarda çalışabilirler:
+*   PIC Tasarım Mühendisi (Design Engineer)
+*   Kuantum Algoritma Araştırmacısı (Quantum Researcher)
+*   Optoelektronik Sistem Mimarı
+*   Nanofabrikasyon Uzmanı
+*   Kuantum Haberleşme Güvenliği Uzmanı
 
 ---
 
-## 📜 Lisans
+## 🤝 Katkıda Bulunma ve Komünite
 
-Bu proje **MIT Lisansı** altında lisanslanmıştır.
+Bu müfredat, sürekli gelişen bir ekosistemdir. Katkılarınızla Türkiye'deki fotonik ve kuantum okuryazarlığını artırabiliriz:
+
+1.  **Ders Notları:** Eksik gördüğünüz teknik konuları Markdown formatında ekleyebilirsiniz.
+2.  **Simülasyonlar:** Yeni bileşen tasarımları veya algoritma örnekleri gönderebilirsiniz.
+3.  **Hata Bildirimi:** Teknik veya yazım hataları için **Issue** açabilirsiniz.
+
+---
+
+## 📜 Lisans ve Kullanım Koşulları
+
+Bu proje **MIT Lisansı** altında korunmaktadır. Eğitim ve araştırma amacıyla, kaynak gösterilerek serbestçe kullanılabilir. 
+
+> *"Işık, geleceği aydınlatmakla kalmaz; onu hesaplar ve iletir."*
