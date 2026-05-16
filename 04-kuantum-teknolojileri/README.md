@@ -1,41 +1,37 @@
-# Bölüm 04: Kuantum Teknolojileri ve Donanım Sistemleri
+# Faz 04: Kuantum Teknolojileri (Donanım ve Yazılım)
 
-Kuantum mekaniğinin süperpozisyon ve dolanıklık gibi fenomenlerini kullanarak, klasik bilgisayarların çözemediği problemleri çözmeyi hedefleyen ileri teknoloji alanıdır. Bu bölümde hem kapı tabanlı hem de fotonik kuantum hesaplama yaklaşımları incelenmektedir.
+Kuantum teknolojileri; süperpozisyon, dolanıklık ve tünelleme gibi kuantum mekaniksel fenomenleri kullanarak hesaplama, haberleşme ve algılama süreçlerinde devrim yaratır. Bu bölüm, kuantum kapılarından algoritmalara kadar olan süreci kapsar.
 
-## 📂 Klasör İçeriği
+## ⚛️ Kuantum Hesaplama Temelleri
 
-### 1. Kuantum Kapıları (`/kuantum-kapilari`)
-Kuantum devrelerinin en temel yapı taşları olan tek ve çoklu kübit kapılarının matematiksel modelleri.
-* **Pauli Kapıları:** X, Y, Z kapıları ve durum değişimleri.
-* **Hadamard Kapısı:** Süperpozisyon oluşturma.
-* **CNOT ve Kontrollü Kapılar:** Dolanıklık (Entanglement) yaratma mekanizmaları.
+### 1. Kübit (Quantum Bit)
+Klasik bitin aksine, aynı anda hem 0 hem de 1 durumunda bulunabilen (süperpozisyon) temel bilgi birimi.
+* **Bloch Küresi:** Kübitin durumunu görselleştirmek için kullanılan geometrik temsil.
 
-### 2. Kuantum Algoritmaları (`/kuantum-algoritmalari`)
-Belirli problemleri çözmek için tasarlanmış yüksek performanslı kuantum prosedürleri.
-* **Shor Algoritması:** Tam sayı çarpanlarına ayırma.
-* **Grover Algoritması:** Veri tabanı arama.
-* **VQE ve QAOA:** Kuantum-klasik hibrit optimizasyon algoritmaları.
+### 2. Kuantum Kapıları (Quantum Gates)
+Kübitler üzerinde işlem yapan üniter matrisler.
+* **Tek Kübit Kapıları:** X (NOT), Y, Z, H (Hadamard - süperpozisyon oluşturur), S, T.
+* **Çoklu Kübit Kapıları:** CNOT (kontrollü-NOT), SWAP, Toffoli.
 
-### 3. Fotonik Kuantum Hesaplama (`/fotonik-kuantum`)
-Işığın kuantum durumları (fotonlar) kullanılarak yapılan hesaplamalar.
-* **Sürekli Değişken (Continuous Variable) Kuantum:** Gaussian durumları ve sıkıştırılmış (squeezed) ışık.
-* **Bozon Örneklemesi (Boson Sampling):** Kuantum üstünlüğü gösteren fotonik deneyler.
+### 3. Dolanıklık (Entanglement)
+İki veya daha fazla kübitin, aralarındaki mesafe ne olursa olsun birbirlerinin durumuna bağlı olması. Bell durumları bu fenomenin temelini oluşturur.
 
-### 4. Kuantum Haberleşme (`/kuantum-haberleşme`)
-Kuantum güvenli iletişim protokolleri.
-* **Kuantum Anahtar Dağıtımı (QKD):** BB84 ve E91 protokolleri.
-* **Kuantum Teleportasyon:** Bilginin dolanıklık yoluyla aktarımı.
+## 🛠️ Kuantum Programlama Ekosistemi
 
----
+* **Qiskit (IBM):** Python tabanlı, açık kaynaklı kuantum programlama çerçevesi.
+* **PennyLane:** Diferansiyellenebilir kuantum programlama (Kuantum Makine Öğrenmesi).
+* **Strawberry Fields:** Fotonik tabanlı kuantum hesaplama simülatörü (CV - Continuous Variable).
 
-## 🛠️ Programlama Kütüphaneleri
-* **Qiskit:** Kapı tabanlı devre tasarımı.
-* **Strawberry Fields:** Fotonik kuantum simülasyonu.
-* **PennyLane:** Diferansiyellenebilir kuantum devreleri.
+## 📡 Kuantum Haberleşme
 
----
+* **QKD (Quantum Key Distribution):** BB84 gibi protokollerle güvenli anahtar değişimi.
+* **Kuantum Teleportasyon:** Bir kuantum durumunun dolanık çiftler kullanılarak bir yerden başka bir yere aktarılması.
 
-## 📈 Araştırma Konuları
-* Kuantum Hata Düzeltme (Quantum Error Correction).
-* Ölçeklenebilir Kuantum İşlemci Birimleri (QPU).
-* Kuantum İnternet Altyapısı.
+## 💻 Mevcut Kodlar
+
+* `/kuantum-kapilari/quantum_gates.py`: Temel kuantum kapılarının matris operasyonları ile simülasyonu.
+* `/kuantum-algoritmalari/bell_states.py`: Bell durumlarının (dolanıklık) oluşturulması.
+
+## 📖 Kaynakça
+1. Nielsen, M. A., & Chuang, I. L., "Quantum Computation and Quantum Information".
+2. Hidary, J. D., "Quantum Computing: An Applied Approach".

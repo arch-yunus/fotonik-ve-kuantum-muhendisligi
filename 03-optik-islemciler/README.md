@@ -1,30 +1,30 @@
-# Bölüm 03: Optik İşlemciler ve Işık Hızında Hesaplama
+# Faz 03: Optik İşlemciler ve Yapay Zeka (ONN)
 
-Geleneksel von Neumann mimarisinin "hafıza duvarı" ve enerji tüketimi sorunlarına çözüm olarak geliştirilen optik hesaplama mimarileri, yapay zeka algoritmalarını ışık hızında ve ultra düşük enerjiyle koşturmayı hedefler.
+Optik işlemciler, matris-vektör çarpımı gibi yoğun hesaplama gerektiren işlemleri ışık hızında ve ultra-düşük enerji tüketimiyle gerçekleştirmeyi hedefler. Bu bölüm, nöromorfik optik hesaplama ve Optik Sinir Ağları (ONN) üzerine odaklanır.
 
-## 📂 Klasör İçeriği
+## 🧠 Optik Hesaplama Neden Gereklidir?
 
-### 1. Optik Sinir Ağları (Optical Neural Networks - ONN) (`/optik-sinir-aglari`)
-Matris-vektör çarpımı operasyonlarının Mach-Zehnder İnterferometre matrisleri kullanılarak optik olarak gerçekleştirilmesi.
-* **Koherant Optik Hesaplama:** Faz ve genlik manipülasyonu.
-* **Programlanabilir Fotonik Devreler:** Ağırlıkların çip üzerinde güncellenmesi.
-* **Eğitim Algoritmaları:** Hibrit kuantum-klasik veya tamamen optik geri yayılım (backpropagation) yaklaşımları.
+Geleneksel von Neumann mimarisi, veri taşıma (bellek darboğazı) ve ısı üretimi nedeniyle sınırlara dayanmıştır. Fotonik, şu avantajları sunar:
+* **Paralellik:** Farklı dalga boyları (WDM) veya modlar kullanılarak aynı anda birden fazla işlem yapılabilir.
+* **Hız:** Işığın yayılma süresi, işlem süresini belirler (latency < ns).
+* **Enerji Verimliliği:** Pasif optik elemanlar (MZI ağları gibi) hesaplama sırasında neredeyse hiç enerji harcamaz.
 
-### 2. Kırınım Tabanlı İşlemciler (Diffractive ONN - DONN) (`/kirinim-islemcileri`)
-Işığın kırınım özelliklerinden yararlanarak pasif faz plakaları aracılığıyla hesaplama yapılması.
-* **Pasif Hesaplama:** Enerji tüketmeden (sadece deteksiyon aşamasında güç harcayarak) çıkarım (inference) yapılması.
-* **Terahertz ve Optik Rejimler:** Farklı dalga boylarında kırınım tabanlı modelleme.
+## 🏗️ Optik Sinir Ağları (ONN) Mimarileri
 
----
+### 1. Interferometrik Yapılar (Reck/Clements Mesh)
+MZI birimlerinden oluşan bir matris ağı ile herhangi bir üniter matris (U) temsil edilebilir.
+* **Uygulama:** Giriş vektörü ışık şiddeti veya fazı olarak kodlanır, MZI ağı içinden geçerken matris ile çarpılır.
 
-## 🔬 Temel Kavramlar
-* **Lineer Operasyonlar:** Fourier dönüşümü ve evrişim (convolution) işlemlerinin lensler ve faz plakaları ile yapılması.
-* **Non-Lineerlik:** Optik aktivasyon fonksiyonları ve malzemeler.
-* **Vektör-Matris Çarpımı:** Işık demetlerinin girişim desenleri üzerinden matematiksel işlem yapması.
+### 2. Kırınım Tabanlı Ağlar (DONN - Diffractive ONN)
+Işığın ardışık faz plakalarından (diffractive layers) geçmesiyle oluşan derin öğrenme modelidir.
+* **Uygulama:** Her faz plakası bir nöron katmanı gibi davranır. Işık yayılımı fiziksel olarak çıkarım (inference) işlemini gerçekleştirir.
 
----
+## 💻 Simülasyonlar
 
-## 💻 Uygulama Alanları
-* **Yapay Zeka Hızlandırıcılar:** Derin öğrenme modellerinin donanım bazlı hızlandırılması.
-* **Görüntü İşleme:** Gerçek zamanlı optik filtreleme ve kenar belirleme.
-* **Sinyal İşleme:** Ultra geniş bant genişliğinde veri analizi.
+* `/optik-sinir-aglari/onn_simulation.py`: MZI tabanlı bir üniter matris çarpımı simülatörü.
+* `/kirinim-islemcileri/`: Faz plakası optimizasyonu (hazırlanıyor).
+
+## 📖 Literatür Takibi
+1. Shen, Y., et al., "Deep learning with coherent optical neural networks," Nature Photonics (2017).
+2. Lin, X., et al., "All-optical machine learning using diffractive deep neural networks," Science (2018).
+3. Shainline, J. M., et al., "Optoelectronic exponential-integrate-and-fire neurons," Applied Physics Letters.

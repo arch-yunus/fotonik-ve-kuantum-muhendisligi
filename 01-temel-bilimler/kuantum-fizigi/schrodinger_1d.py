@@ -1,75 +1,83 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.linalg import eigh
+from scipy.sparse import diags
+from scipy.sparse.linalg import eigsh
 
-def solve_schrodinger_1d(L=1.0, N=1000, V_type='infinite', V0=1000, a=0.2):
+def solve_schrodinger_1d(L, N, V_type='well', V_val=0):
     """
-    1-Boyutlu Zamandan Bağımsız Schrödinger Denklemi Çözücü.
+    1B Zaman Bağımsız Schrödinger Denklemini Çözer.
+    Metot: Sonlu Farklar (Finite Difference Method)
     
     Parametreler:
-    - L: Sistemin toplam uzunluğu (metre cinsinden temsil).
-    - N: Izgara (grid) noktası sayısı.
-    - V_type: 'infinite' (sonsuz kuyu) veya 'finite' (sonlu kuyu).
-    - V0: Sonlu kuyu için potansiyel bariyer yüksekliği.
-    - a: Sonlu kuyu genişliği.
+        L: Sistemin toplam boyu (nm)
+        N: Grid noktası sayısı
+        V_type: Potansiyel tipi ('well', 'harmonic', 'barrier')
+        V_val: Potansiyel değeri/yüksekliği
     """
     x = np.linspace(-L/2, L/2, N)
     dx = x[1] - x[0]
     
-    # Kinetik Enerji Matrisi (Hamiltonian'ın Laplacian kısmı)
-    # H = - (hbar^2 / 2m) * d^2/dx^2 + V
-    # Normalizasyon: hbar = 1, m = 1 (Atomik birimler veya normalize edilmiş form)
-    
-    main_diag = 2.0 * np.ones(N) / dx**2
-    off_diag = -1.0 * np.ones(N-1) / dx**2
-    H = np.diag(main_diag) + np.diag(off_diag, k=1) + np.diag(off_diag, k=-1)
-    
-    # Potansiyel Enerji Tanımı
-    V = np.zeros(N)
-    if V_type == 'finite':
-        # Merkezde -a/2 ile a/2 arasında 0 potansiyel, dışında V0
-        V = np.where(np.abs(x) > a/2, V0, 0)
-    
-    # Potansiyeli Hamiltonian'a ekle
-    H += np.diag(V)
-    
-    # Özdeğer Probleminin Çözümü (Enerjiler ve Dalga Fonksiyonları)
-    energies, wavefunctions = eigh(H)
-    
-    return energies, wavefunctions, x, V
+    # Potansiyel Enerji V(x) Tanımı
+    if V_type == 'well':
+        V = np.zeros(N)
+        V[0] = V[-1] = 1e6 # Sonsuz potansiyel duvarları
+    elif V_type == 'harmonic':
+        V = 0.5 * V_val * x**2
+    elif V_type == 'barrier':
+        V = np.zeros(N)
+        V[int(N/2)-10:int(N/2)+10] = V_val
+    else:
+        V = np.zeros(N)
 
-def plot_results(energies, wavefunctions, x, V, num_states=3):
-    """Sonuçları görselleştirir."""
+    # Hamiltonian Matrisi Oluşturma (H = T + V)
+    # T = -hbar^2 / (2m) * d^2/dx^2
+    # m_e = 1 (Atomik birimler veya normalize edilmiş değerler kullanılıyor)
+    
+    hbar = 1
+    m = 1
+    
+    # İkinci türev matrisi (Merkezi farklar)
+    main_diag = -2 * np.ones(N)
+    off_diag = np.ones(N-1)
+    D2 = diags([off_diag, main_diag, off_diag], [-1, 0, 1]).toarray() / dx**2
+    
+    T = -(hbar**2 / (2 * m)) * D2
+    V_mat = np.diag(V)
+    H = T + V_mat
+    
+    # Özdeğer ve Özvektör Çözümü (En düşük k enerji seviyesi)
+    k = 5
+    energies, psi = eigsh(H, k=k, which='SM')
+    
+    return x, energies, psi, V
+
+def plot_results(x, energies, psi, V):
     plt.figure(figsize=(10, 6))
+    plt.plot(x, V, 'k--', label='Potansiyel V(x)', alpha=0.5)
     
-    # Potansiyeli çiz
-    plt.plot(x, V, 'k-', lw=2, label='Potansiyel V(x)')
-    
-    # İlk 'num_states' kadar dalga fonksiyonunu çiz
-    for i in range(num_states):
-        # Dalga fonksiyonunu enerji seviyesine göre kaydır (Görselleştirme kolaylığı için)
-        psi = wavefunctions[:, i]
-        # Normalizasyon ve ölçeklendirme
-        psi_scaled = psi * (np.max(V)*0.1 if np.max(V) > 0 else 1.0) + energies[i]
-        plt.plot(x, psi_scaled, label=f'n={i+1}, E={energies[i]:.2f}')
-        plt.axhline(y=energies[i], color='gray', linestyle='--', alpha=0.5)
-    
-    plt.title("1-Boyutlu Schrödinger Denklemi Sayısal Çözümü")
-    plt.xlabel("Konum (x)")
-    plt.ylabel("Enerji / Psi(x)")
+    for i in range(len(energies)):
+        # Dalga fonksiyonunu normalize et ve enerji seviyesine ötele
+        y = psi[:, i] * 5 + energies[i]
+        plt.plot(x, y, label=f'E{i} = {energies[i]:.2f}')
+        plt.fill_between(x, energies[i], y, alpha=0.2)
+        
+    plt.title('1B Schrödinger Denklemi Çözümü')
+    plt.xlabel('Konum (x)')
+    plt.ylabel('Enerji / ψ(x)')
     plt.legend()
-    plt.grid(True, alpha=0.3)
+    plt.grid(True, linestyle=':', alpha=0.6)
     plt.show()
 
 if __name__ == "__main__":
-    print("--- 1D Schrödinger Denklemi Çözücü Başlatılıyor ---")
+    print("Simülasyon başlatılıyor: Sonsuz Potansiyel Kuyusu")
+    L = 10.0
+    N = 1000
+    x, E, psi, V = solve_schrodinger_1d(L, N, V_type='well')
     
-    # Sonsuz Kuyu Çözümü
-    E_inf, psi_inf, x, V_inf = solve_schrodinger_1d(V_type='infinite')
-    print(f"Sonsuz Kuyu - İlk 3 Enerji Seviyesi: {E_inf[:3]}")
+    print(f"Hesaplanan ilk {len(E)} enerji seviyesi:")
+    for i, val in enumerate(E):
+        print(f"Seviye {i}: {val:.4f}")
     
-    # Görselleştirmek için (Not: Terminalde çalışırken grafik penceresi açılmayabilir,
-    # ancak kod yapısı tamdır.)
-    # plot_results(E_inf, psi_inf, x, V_inf)
-    
-    print("\nSimülasyon başarıyla tamamlandı.")
+    # Not: Başsız ortamda plot_results görselleştirme yapmayabilir, 
+    # ancak kodun doğruluğu terminal çıktısından görülebilir.
+    # plot_results(x, E, psi, V)

@@ -1,31 +1,37 @@
-# Bölüm 05: Proje Tasarımları ve Akademik Standartlar
+# Faz 05: Proje Tasarımları ve Bitirme Çalışmaları
 
-Bu bölüm, müfredat boyunca öğrenilen teorik ve pratik bilgilerin somut projelere dönüştürülmesini desteklemek amacıyla hazırlanmıştır. Mühendislik tasarımı ve akademik raporlama standartları burada sunulmaktadır.
+Bu bölüm, öğrencilerin ve araştırmacıların edindikleri teorik ve pratik bilgileri gerçek dünya problemlerine uygulayabilecekleri proje senaryolarını ve raporlama standartlarını içerir.
 
-## 📂 Klasör İçeriği
+## 📝 Uygulamalı Proje Senaryoları
 
-### 1. Proje Senaryoları (`/proje-senaryolari`)
-Farklı zorluk seviyelerinde uygulama fikirleri.
-* **Başlangıç:** Tekli halka rezonatör tasarımı ve optimizasyonu.
-* **Orta:** 4x4 Optik Sinir Ağı (ONN) simülasyonu.
-* **İleri:** Hibrit kuantum-klasik kriptografik anahtar değişim sistemi tasarımı.
+### 1. Optik Haberleşme Kanalları
+* **Görev:** Belirli bir fiber optik kanal için bit hata oranını (BER) minimize eden bir modülasyon tekniği geliştirilmesi.
+* **Araçlar:** Python, NumPy, SciPy.
 
-### 2. Rapor Şablonları (`/rapor-sablonlari`)
-Projelerin sunumu ve dökümantasyonu için gerekli formatlar.
-* **IEEE Standartları:** Teknik makale formatı.
-* **LaTeX Şablonları:** Profesyonel raporlama araçları.
-* **Sunum Teknikleri:** Karmaşık konuların görselleştirilmesi.
+### 2. Kuantum Algoritma Tasarımı (Shor ve Grover)
+* **Görev:** Klasik bilgisayarların zorlandığı bir veri kümesi üzerinde Grover arama algoritmasının verimliliğinin test edilmesi.
+* **Araçlar:** Qiskit, IBM Quantum Lab.
+
+### 3. Fotonik Kristal Filtre Tasarımı
+* **Görev:** 1550nm (telekom bandı) dalga boyunda ışığı hapseden bir fotonik kristal boşluk (cavity) tasarımı.
+* **Araçlar:** Meep (FDTD), gdsfactory.
+
+### 4. Optik Yapay Zeka ile Görüntü Sınıflandırma
+* **Görev:** MNIST veri setini kullanarak, ışığın kırınımını kullanan bir DONN (Diffractive ONN) modelinin eğitilmesi.
+* **Araçlar:** PyTorch, Meep.
+
+## 📊 Raporlama ve Sunum Standartları
+
+Akademik dürüstlük ve profesyonel sunum için şu kurallara uyulmalıdır:
+1. **IEEE Formatı:** Teknik raporlar için IEEE konferans bildirisi formatı kullanılmalıdır.
+2. **Görselleştirme:** Veriler yüksek çözünürlüklü grafiklerle desteklenmelidir.
+3. **Kod Paylaşımı:** Projenin tüm simülasyon kodları, dökümante edilmiş bir şekilde sunulmalıdır.
+
+## 📁 Dizin İçeriği
+
+* `/proje-senaryolari/`: Detaylı proje isterleri ve başlangıç kodları.
+* `/rapor-sablonlari/`: LaTeX ve Word formatında akademik rapor taslakları.
 
 ---
 
-## 📝 Proje Hazırlama Süreci
-1. **İsterlerin Belirlenmesi:** Projenin hangi problemi çözdüğünün tanımlanması.
-2. **Literatür Taraması:** Mevcut çözümlerin ve makalelerin incelenmesi.
-3. **Modelleme ve Simülasyon:** Sayısal araçlarla tasarımın doğrulanması.
-4. **Veri Analizi:** Sonuçların grafiksel temsili ve tartışılması.
-5. **Raporlama:** Bulguların akademik standartlarda dökümante edilmesi.
-
----
-
-## 💡 İnovasyon ve Araştırma
-Bu modül, öğrencileri sadece öğrenmeye değil, aynı zamanda yeni yapılar keşfetmeye teşvik eder. Fotonik ve kuantum dünyasında henüz çözülmemiş birçok problem, yaratıcı mühendislik çözümlerini beklemektedir.
+**Başarılar dileriz!** Işığın ve kuantumun gücü sizinle olsun.

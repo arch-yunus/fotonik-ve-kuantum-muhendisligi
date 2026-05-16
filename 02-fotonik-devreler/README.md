@@ -1,38 +1,35 @@
-# Bölüm 02: Fotonik Entegre Devreler ve Silikon Fotoniği
+# Faz 02: Fotonik Entegre Devreler (PIC)
 
-Bu bölüm, optik bileşenlerin bir çip üzerinde entegre edilmesini sağlayan Fotonik Entegre Devre (Photonic Integrated Circuits) teknolojilerine odaklanmaktadır. Silikon fotoniği, günümüzde veri merkezlerinden yapay zeka işlemcilerine kadar geniş bir alanda devrim yaratmaktadır.
+Fotonik Entegre Devreler, geleneksel elektronik devrelerin yaptığı işi (sinyal işleme, iletim, hesaplama) elektronlar yerine fotonlar (ışık) ile gerçekleştiren yapılardır. Bu bölüm, PIC bileşenlerinin tasarımı ve simülasyonuna odaklanır.
 
-## 📂 Klasör İçeriği
+## 🏗️ PIC Bileşen Mimarisi
 
-### 1. Pasif Bileşenler (`/pasif-bilesenler`)
-Dışarıdan bir enerji girişi gerektirmeden ışığı yönlendiren ve filtreleyen yapılar.
-* **Dalga Kılavuzları (Waveguides):** Işığın çip üzerinde taşınması.
-* **Yönlü Bağlaştırıcılar (Directional Couplers):** Işık gücünün bölünmesi ve birleştirilmesi.
-* **Mach-Zehnder İnterferometreleri:** Faz farkı yaratarak girişim tabanlı kontrol sağlayan yapılar.
-* **Halka Rezonatörler (Ring Resonators):** Spektral filtreleme ve optik geciktirme hatları.
+### 1. Pasif Bileşenler
+Enerji tüketmeden ışığı yönlendiren veya filtreleyen elemanlar.
+* **Dalga Kılavuzları (Waveguides):** Işığın hapsedildiği yollar (genellikle silikon veya silikon nitrür).
+* **MZI (Mach-Zehnder Interferometer):** Işığı iki kola ayırıp tekrar birleştirerek faz farkına dayalı anahtarlama yapar.
+* **Halka Rezonatörler (Ring Resonators):** Belirli dalga boylarını süzmek için kullanılan yüksek Q-faktörlü halkalar.
+* **Yönlü Bağlaştırıcılar (Directional Couplers):** Evanescent dalga teorisi ile ışığı kanallar arasında paylaştırır.
 
-### 2. Aktif Bileşenler (`/aktif-bilesenler`)
-Elektriksel sinyallerle optik özellikleri değiştirilen bileşenler.
-* **Elektro-Optik Modülatörler:** Verinin ışık üzerine bindirilmesi.
-* **Termo-Optik Ayarlayıcılar:** Isıl yöntemle faz kontrolü.
-* **Fotodedektörler:** Optik sinyalin tekrar elektriksel sinyale dönüştürülmesi.
+### 2. Aktif Bileşenler
+Dışarıdan bir sinyal (elektrik, ısı vb.) ile ışığın özelliklerini değiştiren elemanlar.
+* **Elektro-Optik Modülatörler:** Elektrik sinyalini optik sinyale çevirir (Ghz hızlarında veri iletimi).
+* **Faz Kaydırıcılar:** Termo-optik veya plazma dispersiyon etkisi ile ışığın fazını değiştirir.
+* **Fotodedektörler:** Işığı tekrar elektriğe dönüştüren p-n veya p-i-n eklemleri.
 
-### 3. Tasarım ve Yerleşim (Layout) (`/pic-tasarim-layout`)
-Kod tabanlı donanım tasarımı süreçleri.
-* **gdsfactory Kullanımı:** Python ile parametrik bileşen tasarımı.
-* **GDSII Çıktıları:** Üretim (Dökümhane) için gerekli maske dosyalarının oluşturulması.
+## 📐 Tasarım ve Layout Süreci
 
----
+PIC tasarımı genellikle bir simülasyon-layout döngüsünden oluşur:
+1. **Mod Analizi:** Dalga kılavuzu geometrisinin belirlenmesi (Lumerical, Meep).
+2. **Devre Simülasyonu:** Bileşenlerin birbirleriyle olan etkileşimi (Interconnect, Caphe).
+3. **Layout (Maske Tasarımı):** Çip fabrikasyonu için GDSII formatında çizim (gdsfactory, Nazca).
 
-## 🛠️ Tasarım Araçları
-Bu modülde aşağıdaki araçlarla çalışılmaktadır:
-1. **gdsfactory:** Tasarım otomasyonu ve yerleşim.
-2. **Meep:** Bileşen bazlı FDTD simülasyonları.
-3. **Lumerical (Ticari):** Endüstriyel düzeyde simülasyon referansları.
+## 💻 Mevcut Kodlar
 
----
+* `/pasif-bilesenler/ring_resonator.py`: Halka rezonatör spektrum analizi.
+* `/pasif-bilesenler/mach_zehnder_interferometer.py`: MZI geçirim spektrumu ve faz duyarlılığı.
+* `/pic-tasarim-layout/`: gdsfactory tabanlı otomatik layout üretim örnekleri (hazırlanıyor).
 
-## 📈 Öğrenim Hedefleri
-* Nano ölçekte ışık hapsetme mekanizmalarını kavramak.
-* Karmaşık fotonik devre şemalarını tasarlamak ve simüle etmek.
-* Üretilebilir (DRC uyumlu) fotonik maske dosyaları üretmek.
+## 📖 Temel Kitaplar
+1. Chrostowski, L., & Hochberg, M., "Silicon Photonics Design".
+2. Coldren, L. A., "Diode Lasers and Photonic Integrated Circuits".
